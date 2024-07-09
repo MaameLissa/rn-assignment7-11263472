@@ -215,7 +215,6 @@ const styles = StyleSheet.create({
   },
   Text: {
     left: 40,
-    
   },
   addbutton: {
     top: -5,
