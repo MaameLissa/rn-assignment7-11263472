@@ -4,16 +4,22 @@ This project is a simple e-commerce mobile application built using React Native.
 
 ### Features
 <hr>
-### HomeScreen:
+
+ ### HomeScreen:
 Displays a list of available products fetched from an external API. Each product has an "Add to Cart" button.
+
 ### ProductDetailScreen: 
 Shows detailed information about a selected product.
+
 ### CartScreen: 
 Displays items that have been added to the cart. Users can remove items from the cart.
+
 ### Drawer Navigation:
 Provides easy navigation through a drawer menu accessible through a button or swipe gesture.
+
 ### Data Storage:
 Uses AsyncStorage to store and retrieve cart items locally.
+
 ### Design Choices
 User Experience: The app's design focuses on a simple and intuitive user experience. The product list is displayed in a grid format for easy browsing. Each product card contains an image, title, and price, making it easy for users to get key information at a glance.
 
@@ -34,15 +40,16 @@ On app startup, the cart data is loaded from AsyncStorage to ensure the user's c
 
 ### Usage
 <hr>
-HomeScreen: Browse products and add them to the cart.
-ProductDetailScreen: View detailed information about a product by tapping on it in the HomeScreen.
-CartScreen: View items added to the cart, and remove items if needed.
-Drawer Navigation: Access the drawer menu for additional navigation options.
+<p>HomeScreen: Browse products and add them to the cart.</p>
+<p>ProductDetailScreen: View detailed information about a product by tapping on it in the HomeScreen.</p>
+<p>CartScreen: View items added to the cart, and remove items if needed.</p>
+<p>Drawer Navigation: Access the drawer menu for additional navigation options.</p>
 
 ### Setup
 <hr>
-Clone the repository.
-Install dependencies using npm install or yarn install.
-Run the app on a simulator or physical device using npx react-native run-android or npx react-native run-ios.
+<p>Clone the repository.</p>
+<p>Install dependencies using npm install or yarn install.</p>
+<p>Run the app on a simulator or physical device using npx react-native run-android or npx react-native run-ios.</p>
+
 ### Conclusion
 This project demonstrates the implementation of a basic e-commerce mobile app with React Native, including features for product browsing, detailed product views, and cart management. It highlights the use of React Native's components and hooks, as well as the integration of AsyncStorage for persistent local storage.
