@@ -24,6 +24,10 @@ const CartScreen = () => {
 
   return (
     <View style={styles.container}>
+      <Image source={require("../images/Logo.png")} style={styles.logo} />
+        <View style={styles.headerIcons}></View>
+        <Image source={require("../images/Search.png")} style={styles.searchh} />
+        <View style={styles.headerIcons}></View>
       <Text style={styles.header}>CHECKOUT</Text>
       <FlatList
         data={cart}
@@ -82,6 +86,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+  logo:{
+    left: 120,
+  },
   price: {
     fontSize: 14,
     color: '#888',
@@ -107,6 +114,10 @@ const styles = StyleSheet.create({
   totalAmount: {
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  searchh:{
+    left: 300,
+    top: -20,
   },
   checkoutButton: {
     backgroundColor: '#000',

@@ -1,48 +1,97 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet, Button } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+} from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const HomeScreen = ({ navigation }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
+    fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
 
   const addToCart = async (product) => {
-    const storedCart = await AsyncStorage.getItem('cart');
+    const storedCart = await AsyncStorage.getItem("cart");
     let cart = [];
     if (storedCart) {
       cart = JSON.parse(storedCart);
     }
     cart.push(product);
-    await AsyncStorage.setItem('cart', JSON.stringify(cart));
+    await AsyncStorage.setItem("cart", JSON.stringify(cart));
   };
 
   return (
     <View style={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity>
+          <Image
+            source={require("../images/Menu.png")}
+            style={styles.headerIcon}
+          />
+        </TouchableOpacity>
+        <Image source={require("../images/Logo.png")} style={styles.logo} />
+        <View style={styles.headerIcons}>
+          <TouchableOpacity>
+            <Image
+              source={require("../images/Search.png")}
+              style={styles.headerIcon}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Cart")}>
+            <Image
+              source={require("../images/shoppingBag.png")}
+              style={styles.headerIcon}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
+      <Text style={styles.pageTitle}>OUR STORY</Text>
+      <Image
+        source={require("../images/addbutton.png")}
+        style={styles.add}
+      />
       <FlatList
         data={products}
         numColumns={2}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.productContainer}>
-            <Image source={{ uri: item.image }} style={styles.productImage} />
-            <Text style={styles.productTitle}>{item.title}</Text>
-            <Text style={styles.productPrice}>${item.price}</Text>
-            <TouchableOpacity style={styles.button} onPress={() => addToCart(item)}>
-              <Text style={styles.buttonText}>Add to Cart</Text>
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("ProductDetail", { product: item })
+              }
+            >
+              <Image source={{ uri: item.image }} style={styles.productImage} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ProductDetail', { product: item })}>
-              <Text style={styles.buttonText}>View Details</Text>
+            <View style={styles.productInfo}>
+              <Text style={styles.productTitle}>{item.title}</Text>
+              <Text style={styles.productPrice}>${item.price}</Text>
+            </View>
+            <TouchableOpacity
+              onPress={() => addToCart(item)}
+              style={styles.plusButton}
+            >
+              <Image
+                source={require("../images/add_circle.png")}
+                style={styles.plusIcon}
+              />
             </TouchableOpacity>
           </View>
         )}
       />
-      <TouchableOpacity style={styles.cartButton} onPress={() => navigation.navigate('Cart')}>
-        <Text style={styles.buttonText}>Go to Cart</Text>
+      <TouchableOpacity
+        style={styles.cartButton}
+        onPress={() => navigation.navigate("Cart")}
+      >
+        <Text style={styles.buttonText}>View Cart</Text>
       </TouchableOpacity>
     </View>
   );
@@ -52,51 +101,88 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
+  },
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#ddd",
+  },
+  logo: {
+    width: 70,
+    height: 24,
+  },
+  headerIcons: {
+    flexDirection: "row",
+  },
+  headerIcon: {
+    width: 24,
+    height: 24,
+    marginHorizontal: 10,
+  },
+  pageTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "left",
+    marginVertical: 20,
+  },
+  add: {
+    marginTop: -70,
+    left: 140,
+    width: 205,
+    height: 67,
   },
   productContainer: {
     flex: 1,
     padding: 10,
     margin: 5,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: "#ddd",
     borderRadius: 10,
-    alignItems: 'center',
+    alignItems: "center",
   },
   productImage: {
     width: 150,
     height: 200,
     marginBottom: 10,
   },
+  productInfo: {
+    alignItems: "center",
+  },
   productTitle: {
     fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
+    textAlign: "center",
   },
   productPrice: {
     fontSize: 14,
-    color: 'red',
+    color: "orange",
     marginBottom: 10,
   },
-  button: {
-    backgroundColor: '#007bff',
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    borderRadius: 5,
-    marginVertical: 5,
+  plusButton: {
+    position: "absolute",
+    top: 210,
+    right: 10,
   },
-  buttonText: {
-    color: '#fff',
-    fontSize: 14,
-    textAlign: 'center',
+  plusIcon: {
+    width: 24,
+    height: 24,
   },
   cartButton: {
-    backgroundColor: '#007bff',
+    backgroundColor: "#007bff",
     padding: 15,
     borderRadius: 5,
     marginTop: 10,
-    alignSelf: 'center',
-    width: '90%',
+    alignSelf: "center",
+    width: "90%",
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 14,
+    textAlign: "center",
   },
 });
 
