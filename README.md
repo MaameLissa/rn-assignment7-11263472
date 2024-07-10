@@ -57,20 +57,7 @@ On app startup, the cart data is loaded from AsyncStorage to ensure the user's c
 This project demonstrates the implementation of a basic e-commerce mobile app with React Native, including features for product browsing, detailed product views, and cart management. It highlights the use of React Native's components and hooks, as well as the integration of AsyncStorage for persistent local storage.
 
 ### Screenshots
-![photo_15_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/11d691a7-6c07-4358-9931-93c9102dff93)
-![photo_14_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/0ffc895f-abdd-47ad-9e73-0577f5566d1b)
-![photo_13_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/95bb62b8-1dc3-42ba-815d-18bb4a60aee4)
-![photo_12_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/12b84782-2354-4e17-893b-8189aed000c7)
-![photo_11_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/9a863515-85cc-4c10-9308-41d38baf5ebb)
-![photo_10_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/752a07e8-3729-4a52-a528-ac67422cf916)
-![photo_9_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/c49771bd-4729-47bc-a5c9-85c078e51725)
-![photo_8_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/1681a3bd-936e-4a53-9dc4-40aa903279b8)
-![photo_7_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/6782b671-8f8f-48d6-9239-eb161d9abc5e)
-![photo_6_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/fd8ae2e3-e2ef-4d19-8da2-0e74c372558c)
-![photo_5_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/8abcee49-23e4-444d-bf91-6328c516db17)
-![photo_4_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/13602bdb-a9d1-4e0b-975f-05f9033ca0c2)
-![photo_3_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/4416503c-9d14-43f0-babf-de707bfb835f)
-![photo_2_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/63a8612f-0387-429f-8cb3-5641e6493e47)
-![photo_1_2024-07-10_09-51-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/a1ec03b8-49c8-43a5-a856-b685325f0825)
+
+
 
 
