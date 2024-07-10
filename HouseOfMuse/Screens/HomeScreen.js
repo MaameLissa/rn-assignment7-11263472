@@ -36,7 +36,7 @@ const HomeScreen = ({ navigation }) => {
           </View>
         )}
       />
-      <Button title="Go to Cart" onPress={() => navigation.navigate('Cart')} /> {/* Add navigation to CartScreen */}
+      <Button title="Go to Cart" onPress={() => navigation.navigate('Cart')} /> 
     </View>
   );
 };
