@@ -57,12 +57,6 @@ On app startup, the cart data is loaded from AsyncStorage to ensure the user's c
 This project demonstrates the implementation of a basic e-commerce mobile app with React Native, including features for product browsing, detailed product views, and cart management. It highlights the use of React Native's components and hooks, as well as the integration of AsyncStorage for persistent local storage.
 
 ### Screenshots
-<<<<<<< HEAD
-
-
-
-
-=======
 ![photo_8_2024-07-10_16-28-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/c4b3dc10-cd8d-45cd-ad58-e8f323619342)
 ![photo_7_2024-07-10_16-28-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/4d8755a6-47b0-4f0b-84e7-25a69d77d05c)
 ![photo_6_2024-07-10_16-28-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/36fed096-44d6-484b-bef5-6adda21a5bf3)
@@ -78,4 +72,4 @@ This project demonstrates the implementation of a basic e-commerce mobile app wi
 ![photo_11_2024-07-10_16-28-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/38afbeb1-3b3d-4cd1-84e6-32918bfcf928)
 ![photo_10_2024-07-10_16-28-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/8692a694-c323-4e83-a491-399192f2cfce)
 ![photo_9_2024-07-10_16-28-57](https://github.com/MaameLissa/rn-assignment7-11263472/assets/170031712/f8a3bc21-2bdc-437c-bbaa-d36c61e1dc59)
->>>>>>> 993bbe155886eb804d522eec0ee915452c895a8a
+
