@@ -1,4 +1,5 @@
 <h2>HouseOfMuse</h2>
+
 ### Overview
 <hr>
 This project is a simple e-commerce mobile application built using React Native. It allows users to view a list of products fetched from an external API, view detailed information about each product, add products to their cart, and manage their cart contents. The app uses AsyncStorage to store selected items locally on the device.
