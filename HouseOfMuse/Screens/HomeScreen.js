@@ -25,18 +25,25 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       <FlatList
         data={products}
+        numColumns={2}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.productContainer}>
             <Image source={{ uri: item.image }} style={styles.productImage} />
             <Text style={styles.productTitle}>{item.title}</Text>
             <Text style={styles.productPrice}>${item.price}</Text>
-            <Button title="Add to Cart" onPress={() => addToCart(item)} />
-            <Button title="View Details" onPress={() => navigation.navigate('ProductDetail', { product: item })} />
+            <TouchableOpacity style={styles.button} onPress={() => addToCart(item)}>
+              <Text style={styles.buttonText}>Add to Cart</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ProductDetail', { product: item })}>
+              <Text style={styles.buttonText}>View Details</Text>
+            </TouchableOpacity>
           </View>
         )}
       />
-      <Button title="Go to Cart" onPress={() => navigation.navigate('Cart')} /> 
+      <TouchableOpacity style={styles.cartButton} onPress={() => navigation.navigate('Cart')}>
+        <Text style={styles.buttonText}>Go to Cart</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -45,26 +52,51 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
+    backgroundColor: '#fff',
   },
   productContainer: {
+    flex: 1,
     padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-    flexDirection: 'row',
+    margin: 5,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 10,
     alignItems: 'center',
   },
   productImage: {
-    width: 50,
-    height: 50,
-    marginRight: 10,
+    width: 150,
+    height: 200,
+    marginBottom: 10,
   },
   productTitle: {
     fontSize: 16,
     fontWeight: 'bold',
+    textAlign: 'center',
   },
   productPrice: {
     fontSize: 14,
     color: 'red',
+    marginBottom: 10,
+  },
+  button: {
+    backgroundColor: '#007bff',
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderRadius: 5,
+    marginVertical: 5,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 14,
+    textAlign: 'center',
+  },
+  cartButton: {
+    backgroundColor: '#007bff',
+    padding: 15,
+    borderRadius: 5,
+    marginTop: 10,
+    alignSelf: 'center',
+    width: '90%',
   },
 });
 
