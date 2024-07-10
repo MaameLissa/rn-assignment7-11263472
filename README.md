@@ -1,7 +1,9 @@
 ### Overview
+<hr>
 This project is a simple e-commerce mobile application built using React Native. It allows users to view a list of products fetched from an external API, view detailed information about each product, add products to their cart, and manage their cart contents. The app uses AsyncStorage to store selected items locally on the device.
 
 ### Features
+<hr>
 ### HomeScreen:
 Displays a list of available products fetched from an external API. Each product has an "Add to Cart" button.
 ### ProductDetailScreen: 
@@ -31,11 +33,14 @@ AsyncStorage: The cart items are stored locally on the device using AsyncStorage
 On app startup, the cart data is loaded from AsyncStorage to ensure the user's cart state is restored. This is done using an asynchronous function that reads the cart data from storage and updates the app's state.
 
 ### Usage
+<hr>
 HomeScreen: Browse products and add them to the cart.
 ProductDetailScreen: View detailed information about a product by tapping on it in the HomeScreen.
 CartScreen: View items added to the cart, and remove items if needed.
 Drawer Navigation: Access the drawer menu for additional navigation options.
+
 ### Setup
+<hr>
 Clone the repository.
 Install dependencies using npm install or yarn install.
 Run the app on a simulator or physical device using npx react-native run-android or npx react-native run-ios.
