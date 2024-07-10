@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, FlatList, Button, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, FlatList, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const CartScreen = () => {
@@ -24,10 +24,12 @@ const CartScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Image source={require("../images/Logo.png")} style={styles.logo} />
-        <View style={styles.headerIcons}></View>
-        <Image source={require("../images/Search.png")} style={styles.searchh} />
-        <View style={styles.headerIcons}></View>
+      <View style={styles.headerContainer}>
+        <Image source={require("../images/Logo.png")} style={styles.logo} />
+        <TouchableOpacity>
+          <Image source={require("../images/Search.png")} style={styles.searchIcon} />
+        </TouchableOpacity>
+      </View>
       <Text style={styles.header}>CHECKOUT</Text>
       <FlatList
         data={cart}
@@ -39,7 +41,7 @@ const CartScreen = () => {
               <Text style={styles.price}>${item.price}</Text>
             </View>
             <TouchableOpacity onPress={() => removeFromCart(item)} style={styles.removeButton}>
-              <Text style={styles.removeButtonText}>✖</Text>
+              <Image source={require("../images/remove.png")} style={styles.removeIcon} />
             </TouchableOpacity>
           </View>
         )}
@@ -59,7 +61,22 @@ const CartScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    padding: 20,
+    backgroundColor: "#fff",
+  },
+  headerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  logo: {
+    width: 120,
+    height: 50,
+  },
+  searchIcon: {
+    width: 24,
+    height: 24,
   },
   header: {
     fontSize: 24,
@@ -73,32 +90,33 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth: 1,
     borderColor: '#ccc',
+    marginBottom: 10,
   },
   image: {
-    width: 50,
-    height: 50,
+    width: 80,
+    height: 120,
     marginRight: 10,
   },
   details: {
     flex: 1,
+    justifyContent: 'center',
   },
   title: {
     fontSize: 16,
     fontWeight: 'bold',
-  },
-  logo:{
-    left: 120,
+    marginBottom: 5,
   },
   price: {
-    fontSize: 14,
-    color: '#888',
+    fontSize: 18,
+    color: 'orange',
   },
   removeButton: {
     padding: 10,
   },
-  removeButtonText: {
-    color: 'red',
-    fontSize: 20,
+  removeIcon: {
+    width: 24,
+    height: 24,
+    top: 30,
   },
   totalContainer: {
     flexDirection: 'row',
@@ -114,10 +132,6 @@ const styles = StyleSheet.create({
   totalAmount: {
     fontSize: 18,
     fontWeight: 'bold',
-  },
-  searchh:{
-    left: 300,
-    top: -20,
   },
   checkoutButton: {
     backgroundColor: '#000',

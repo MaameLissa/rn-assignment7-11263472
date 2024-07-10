@@ -73,17 +73,16 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
             <View style={styles.productInfo}>
               <Text style={styles.productTitle}>{item.title}</Text>
-              <Text style={styles.productPrice}>${item.price}</Text>
+              <View style={styles.priceContainer}>
+                <Text style={styles.productPrice}>${item.price}</Text>
+                <TouchableOpacity onPress={() => addToCart(item)}>
+                  <Image
+                    source={require("../images/add_circle.png")}
+                    style={styles.plusIcon}
+                  />
+                </TouchableOpacity>
+              </View>
             </View>
-            <TouchableOpacity
-              onPress={() => addToCart(item)}
-              style={styles.plusButton}
-            >
-              <Image
-                source={require("../images/add_circle.png")}
-                style={styles.plusIcon}
-              />
-            </TouchableOpacity>
           </View>
         )}
       />
@@ -137,12 +136,21 @@ const styles = StyleSheet.create({
   },
   productContainer: {
     flex: 1,
-    padding: 10,
+    padding: 15,
     margin: 5,
     borderWidth: 1,
     borderColor: "#ddd",
     borderRadius: 10,
     alignItems: "center",
+    backgroundColor: "#fff",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+    elevation: 2,
   },
   productImage: {
     width: 150,
@@ -151,21 +159,27 @@ const styles = StyleSheet.create({
   },
   productInfo: {
     alignItems: "center",
+    borderTopWidth: 1,
+    borderTopColor: "#ddd",
+    paddingTop: 10,
+    width: "100%",
   },
   productTitle: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "bold",
     textAlign: "center",
+    marginBottom: 5,
+  },
+  priceContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    paddingHorizontal: 10,
   },
   productPrice: {
-    fontSize: 14,
+    fontSize: 16,
     color: "orange",
-    marginBottom: 10,
-  },
-  plusButton: {
-    position: "absolute",
-    top: 210,
-    right: 10,
   },
   plusIcon: {
     width: 24,
